@@ -6,9 +6,10 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.holhar.qod.api.qod.response.QodServiceException;
-import de.holhar.qod.domain.Quote;
+import de.holhar.qod.domain.Qod;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,10 +42,10 @@ class QodServiceTest {
         .andRespond(withSuccess(expectedContentAsString, MediaType.APPLICATION_JSON));
 
     // when
-    Quote qod = service.getQod();
+    Qod qod = service.getQod();
 
     // then
     assertThat(qod)
-        .isEqualTo(new Quote("John Doe", "Foo, the bar."));
+        .isEqualTo(new Qod("John Doe", "Foo, the bar.", LocalDate.parse("2023-11-21")));
   }
 }

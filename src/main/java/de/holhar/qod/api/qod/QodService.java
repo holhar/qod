@@ -3,7 +3,8 @@ package de.holhar.qod.api.qod;
 import de.holhar.qod.api.qod.response.QodQuote;
 import de.holhar.qod.api.qod.response.QodResponse;
 import de.holhar.qod.api.qod.response.QodServiceException;
-import de.holhar.qod.domain.Quote;
+import de.holhar.qod.domain.Qod;
+import java.time.LocalDate;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class QodService {
     this.restTemplate = builder.build();
   }
 
-  public Quote getQod() throws QodServiceException {
+  public Qod getQod() throws QodServiceException {
     HttpHeaders headers = new HttpHeaders();
     headers.setBearerAuth(apiKey);
     HttpEntity<Object> entity = new HttpEntity<>(headers);
@@ -51,7 +52,8 @@ public class QodService {
 
     var quote = qodQuoteList.get(0).getQuote();
     var author = qodQuoteList.get(0).getAuthor();
+    var date = LocalDate.parse(qodQuoteList.get(0).getDate());
 
-    return new Quote(author, quote);
+    return new Qod(author, quote, date);
   }
 }
