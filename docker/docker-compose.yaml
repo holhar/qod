@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  <REPLACE-ME>:
+    image: mariadb:10.3
+    container_name: <REPLACE-ME>
+    environment:
+      MYSQL_ROOT_PASSWORD: <REPLACE-ME>
+      MYSQL_DATABASE: <REPLACE-ME>
+    ports:
+      - "3306:3306"
+

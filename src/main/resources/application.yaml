@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+telegram:
+  bot:
+    token: REPLACE_ME
+  chat:
+    id: REPLACE_ME
+
+qod:
+  api-url: http://replace.me/qod
+  api-key: REPLACE_ME
