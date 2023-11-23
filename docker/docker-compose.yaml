@@ -1,13 +1,18 @@
 version: '3'
 
-services:
+volumes:
+  data:
 
-  <REPLACE-ME>:
+services:
+  db:
     image: mariadb:10.3
-    container_name: <REPLACE-ME>
+    container_name: qodDb
     environment:
-      MYSQL_ROOT_PASSWORD: <REPLACE-ME>
-      MYSQL_DATABASE: <REPLACE-ME>
+      MYSQL_ROOT_PASSWORD: REPLACE_ME
+      MYSQL_PASSWORD: REPLACE_ME
+      MYSQL_USER: REPLACE_ME
+      MYSQL_DATABASE: REPLACE_ME
     ports:
       - "3306:3306"
-
+    volumes:
+      - data:/var/lib/mysql
