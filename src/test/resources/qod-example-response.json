@@ -1,0 +1,30 @@
+{
+  "success": {
+    "total": 1
+  },
+  "contents": {
+    "quotes": [
+      {
+        "id": "1234kjgtzui9876asd",
+        "quote": "Foo, the bar.",
+        "length": 13,
+        "author": "John Doe",
+        "language": "en",
+        "tags": [
+          "inspire",
+          "fun"
+        ],
+        "sfw": "xxx",
+        "permalink": "https:\/\/qod.com\/quote\/foo-the-bar",
+        "title": "Inspiring Quote of the day",
+        "category": "inspire",
+        "background": "https:\/\/qod.com\/assets\/images\/qod\/qod-inspire.jpg",
+        "date": "2023-11-21"
+      }
+    ]
+  },
+  "copyright": {
+    "url": "https:\/\/quotes.rest",
+    "year": "2023"
+  }
+}
